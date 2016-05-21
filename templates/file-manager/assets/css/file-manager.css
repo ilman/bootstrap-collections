@@ -1,1 +1,83 @@
-body{ padding-top:80px; }
+body {
+  padding-top: 80px;
+}
+.file-grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  margin-right: -15px;
+}
+.file-grid > .item {
+  width: 150px;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.file-grid .file-name {
+  text-align: center;
+}
+.file-grid .file-block {
+  background: #f7f7f7;
+  border: #ddd solid 1px;
+}
+.file-details dl {
+  margin-bottom: 5px;
+}
+.file-details .file-preview {
+  border: #ddd solid 1px;
+  background: #fff;
+  padding: 15px;
+  text-align: center;
+}
+.btn-file input[type='file'] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+#col-file-sidebar {
+  padding: 15px;
+  background: #f7f7f7;
+}
+#col-file-sidebar .file-block {
+  position: relative;
+  overflow: hidden;
+  border: #ddd solid 1px;
+  background: #fff;
+  margin: 0 0 10px;
+  padding: 5px;
+}
+#col-file-sidebar .file-block .block-thumb {
+  float: left;
+  width: 40px;
+}
+#col-file-sidebar .file-block .block-thumb img {
+  max-width: 100%;
+}
+#col-file-sidebar .file-block .block-body {
+  margin-left: 50px;
+}
+#col-file-sidebar .file-block .block-action {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+#col-file-sidebar .file-block h5 {
+  margin: 5px 0;
+  font-weight: bold;
+}
+#col-file-sidebar .file-block .file-meta {
+  font-size: 11px;
+  color: #999;
+  margin: 0;
+}

@@ -18,6 +18,11 @@
     "jquery": "^2.2.3",
     "bootstrap": "^3.3.6",
     "font-awesome": "fontawesome#^4.6.1",
-    "bootstrap-modal": "^2.2.6"
+    "bootstrap-modal": "^2.2.6",
+    "underscore": "^1.8.3",
+    "blueimp-file-upload": "jquery-file-upload#^9.12.3"
+  },
+  "devDependencies": {
+    
   }
 }
