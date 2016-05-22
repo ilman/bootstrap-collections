@@ -16,7 +16,11 @@ jQuery(document).ready(function($){
 		for(var i=0; i<max_elem; i++){
 			window.fileManager.filtered_list[i].key = i;
 			newcontent += tmpl(window.fileManager.filtered_list[i]);			
-		}			
+		}
+
+		if(! newcontent){
+			newcontent = '<li><p class="alert alert-warning" style="margin-right:15px;">no content</p></li>';
+		}
 		window.fileManager.$file_grid.html(newcontent);
 
 
@@ -88,26 +92,66 @@ jQuery(document).ready(function($){
 	});
 
 
-	/*---search attachment---*/
+	/*---filter attachment---*/
 	
-	$file_manager.find('#navbar').on('keyup', '#filter', function(e){
-		e.preventDefault();
-		var $this = $(this);
-		var this_val = $this.val();
-		
-		window.fileManager.filtered_list =_.filter(window.file_list, function(item){
-			return item.file_name.indexOf(this_val) >= 0;
+	(function(){ 
+
+
+		var $navbar = $file_manager.find('#navbar');
+		var $filter = $navbar.find('#filter');
+		var $type = $navbar.find('#filter-type');
+		var value = {};
+
+
+		function filter(){
+
+			window.fileManager.filtered_list =_.filter(window.file_list, function(item){
+				var is_true = true;
+
+				if(typeof value.type != 'undefined' && value.type){
+					is_true = (item.type == value.type);
+				}
+
+				if(typeof value.filter != 'undefined' && value.filter){
+					is_true = (is_true && item.file_name.indexOf(value.filter) >= 0);
+				}
+
+				return is_true;
+			});
+
+			init();
+
+		}
+
+		$navbar.on('keyup', '#filter', function(e){
+			e.preventDefault();
+
+			value.filter = $(this).val();
+
+			console.log(value);
+			
+			filter();
+
+			// $.ajax({
+			// 	url: site_url+'admin/file',
+			// 	data: $this.serialize(),
+			// 	success: function(response){
+			// 		$file_list = response;
+			// 		init_pagination();
+			// 	}
+			// });
 		});
 		
-		init();
+		$navbar.find('#filter-type').on('click', '.btn', function(e){
+			e.preventDefault();
 
-		// $.ajax({
-		// 	url: site_url+'admin/file',
-		// 	data: $this.serialize(),
-		// 	success: function(response){
-		// 		$file_list = response;
-		// 		init_pagination();
-		// 	}
-		// });
-	});
+			value.type = $(this).val();
+
+			console.log(value);
+			
+			filter();
+		});
+
+
+	})();
 });

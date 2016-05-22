@@ -62,13 +62,13 @@
 						<div class="navbar-text">Filter: </div>
 						<form class="navbar-form navbar-left" role="search">
 							
-							<div class="btn-group" role="group">
-								<button class="btn btn-default" title="File"><i class="fa fa-file"></i></button>
-								<button class="btn btn-default" title="Image"><i class="fa fa-picture-o"></i></button>
-								<button class="btn btn-default" title="Audio"><i class="fa fa-music"></i></button>
-								<button class="btn btn-default" title="Video"><i class="fa fa-film"></i></button>
-								<button class="btn btn-default" title="Archive"><i class="fa fa-archive"></i></button>
-								<button class="btn btn-default" title="Document"><i class="fa fa-file-o"></i></button>
+							<div class="btn-group" id="filter-type">
+								<button class="btn btn-default" title="All Files" value=""><i class="fa fa-file"></i></button>
+								<button class="btn btn-default" title="Image" value="image"><i class="fa fa-picture-o"></i></button>
+								<button class="btn btn-default" title="Audio" value="audio"><i class="fa fa-music"></i></button>
+								<button class="btn btn-default" title="Video" value="video"><i class="fa fa-film"></i></button>
+								<button class="btn btn-default" title="Archive" value="archive"><i class="fa fa-archive"></i></button>
+								<button class="btn btn-default" title="Document" value="document"><i class="fa fa-file-o"></i></button>
 							</div>
 							<div class="form-group">
 								<input type="text" class="form-control" id="filter" placeholder="Search">
@@ -105,7 +105,7 @@
 
 			<script type="text/javascript">
 				var file_path = "http:\/\/localhost\/project-lv\/falcon-calc\/uploads\/media\/admin";
-				var file_list = [{"id":60,"file_name":"question5-05-1.png","file_size":6482,"file_thumb":"question5-05-1_thumb.png","created_date":"2016-05-12 16:50:43"},{"id":59,"file_name":"question7-03-1.png","file_size":11802,"file_thumb":"question7-03-1_thumb.png","created_date":"2016-05-12 16:50:43"},{"id":58,"file_name":"question6-05-1.png","file_size":8183,"file_thumb":"question6-05-1_thumb.png","created_date":"2016-05-12 16:50:43"},{"id":57,"file_name":"question5-03-1.png","file_size":6206,"file_thumb":"question5-03-1_thumb.png","created_date":"2016-05-12 16:50:43"},{"id":56,"file_name":"question1-02-1.png","file_size":8758,"file_thumb":"question1-02-1_thumb.png","created_date":"2016-05-12 16:50:42"},{"id":55,"file_name":"question1-06-1.png","file_size":6728,"file_thumb":"question1-06-1_thumb.png","created_date":"2016-05-12 16:50:42"},{"id":54,"file_name":"question1-04-1.png","file_size":7725,"file_thumb":"question1-04-1_thumb.png","created_date":"2016-05-12 16:50:33"},{"id":53,"file_name":"falconbg2.jpg","file_size":217509,"file_thumb":"falconbg2_thumb.jpg","created_date":"2016-05-12 15:53:52"},{"id":52,"file_name":"untitled-4-03-03.png","file_size":8424,"file_thumb":"untitled-4-03-03_thumb.png","created_date":"2016-01-12 12:42:34"},{"id":51,"file_name":"untitled-4-03.png","file_size":11490,"file_thumb":"untitled-4-03_thumb.png","created_date":"2016-01-12 12:42:34"},{"id":50,"file_name":"untitled-4-03-02.png","file_size":10357,"file_thumb":"untitled-4-03-02_thumb.png","created_date":"2016-01-12 12:42:34"},{"id":49,"file_name":"dom-rep.jpg","file_size":4465150,"file_thumb":"dom-rep_thumb.jpg","created_date":"2015-12-09 23:08:01"},{"id":48,"file_name":"dest-turkey.jpg","file_size":150015,"file_thumb":"dest-turkey_thumb.jpg","created_date":"2015-08-14 22:14:01"},{"id":47,"file_name":"dest-tenerife.jpg","file_size":107383,"file_thumb":"dest-tenerife_thumb.jpg","created_date":"2015-08-14 22:05:09"}];
+				var file_list = [{"id":60,"file_name":"question5-05-1.png","file_size":6482,"file_thumb":"question5-05-1_thumb.png","created_date":"2016-05-12 16:50:43","type":"audio"},{"id":59,"file_name":"question7-03-1.png","file_size":11802,"file_thumb":"question7-03-1_thumb.png","created_date":"2016-05-12 16:50:43","type":"video"},{"id":58,"file_name":"question6-05-1.png","file_size":8183,"file_thumb":"question6-05-1_thumb.png","created_date":"2016-05-12 16:50:43","type":"document"},{"id":57,"file_name":"question5-03-1.png","file_size":6206,"file_thumb":"question5-03-1_thumb.png","created_date":"2016-05-12 16:50:43","type":"archive"},{"id":56,"file_name":"question1-02-1.png","file_size":8758,"file_thumb":"question1-02-1_thumb.png","created_date":"2016-05-12 16:50:42","type":"image"},{"id":55,"file_name":"question1-06-1.png","file_size":6728,"file_thumb":"question1-06-1_thumb.png","created_date":"2016-05-12 16:50:42","type":"image"},{"id":54,"file_name":"question1-04-1.png","file_size":7725,"file_thumb":"question1-04-1_thumb.png","created_date":"2016-05-12 16:50:33","type":"image"},{"id":53,"file_name":"falconbg2.jpg","file_size":217509,"file_thumb":"falconbg2_thumb.jpg","created_date":"2016-05-12 15:53:52","type":"image"},{"id":52,"file_name":"untitled-4-03-03.png","file_size":8424,"file_thumb":"untitled-4-03-03_thumb.png","created_date":"2016-01-12 12:42:34","type":"image"},{"id":51,"file_name":"untitled-4-03.png","file_size":11490,"file_thumb":"untitled-4-03_thumb.png","created_date":"2016-01-12 12:42:34","type":"image"},{"id":50,"file_name":"untitled-4-03-02.png","file_size":10357,"file_thumb":"untitled-4-03-02_thumb.png","created_date":"2016-01-12 12:42:34","type":"image"},{"id":49,"file_name":"dom-rep.jpg","file_size":4465150,"file_thumb":"dom-rep_thumb.jpg","created_date":"2015-12-09 23:08:01","type":"image"},{"id":48,"file_name":"dest-turkey.jpg","file_size":150015,"file_thumb":"dest-turkey_thumb.jpg","created_date":"2015-08-14 22:14:01","type":"image"},{"id":47,"file_name":"dest-tenerife.jpg","file_size":107383,"file_thumb":"dest-tenerife_thumb.jpg","created_date":"2015-08-14 22:05:09","type":"image"}];
 			</script>
 
 			<script type="text/template" id="file_grid_item">
