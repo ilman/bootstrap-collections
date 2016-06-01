@@ -1,0 +1,4 @@
+- [done] reset selection
+- [done] unselect selection
+- delete file
+- [done] insert to html input callback
