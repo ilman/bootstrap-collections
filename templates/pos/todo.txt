@@ -1,0 +1,8 @@
+- basic layout
+- [done] list products
+- [done] add quantity when product duplicated
+- increase/decrease product qty
+- reset selection
+- unselect selection
+- filter by category
+- case-insensitive search
