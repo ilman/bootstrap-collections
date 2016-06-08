@@ -1,0 +1,32 @@
+body {
+  padding-top: 80px;
+}
+.pos-grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  margin-right: -15px;
+}
+.pos-grid > .item {
+  width: 150px;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.pos-grid .product-name {
+  text-align: center;
+}
+.pos-grid .product-block {
+  background: #f7f7f7;
+  border: #ddd solid 1px;
+  text-align: center;
+  padding: 10px;
+}
+.pos-grid .product-block img {
+  max-width: 100%;
+}
+#col-pos-sidebar {
+  padding: 15px;
+  background: #f7f7f7;
+}

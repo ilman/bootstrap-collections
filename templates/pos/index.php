@@ -15,7 +15,7 @@
 		<link href="../../bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
 
 		<!-- Custom styles for this template -->
-		<link href="assets/css/file-manager.css" rel="stylesheet">
+		<link href="assets/css/pos-app.css" rel="stylesheet">
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -54,11 +54,11 @@
 						<div class="navbar-text">Filter: </div>
 						<form class="navbar-form navbar-left" role="search">
 							
-							<div class="btn-group" id="filter-type">
+							<div class="btn-group" id="filter-cat">
 								<button class="btn btn-default" title="All" value="">A</button>
-								<button class="btn btn-default" title="Foods" value="image">F</button>
-								<button class="btn btn-default" title="Beverages" value="audio">B</button>
-								<button class="btn btn-default" title="Deserts" value="video">D</button>
+								<button class="btn btn-default" title="Foods" value="food">F</button>
+								<button class="btn btn-default" title="Beverages" value="beverage">B</button>
+								<button class="btn btn-default" title="Deserts" value="desert">D</button>
 							</div>
 							<div class="form-group">
 								<input type="text" class="form-control" id="filter" placeholder="Search">
@@ -87,7 +87,7 @@
 
 						<table class="table table-striped">
 							<tbody>
-								<?php for($i=0; $i<3; $i++): ?>
+								<?php /* for($i=0; $i<3; $i++): ?>
 									<tr>
 										<td>
 											<h5>Blackforest</h5>
@@ -102,26 +102,33 @@
 										</td>
 										<td>Rp 10.000</td>
 									</tr>
-								<?php endfor ?>
+								<?php endfor */ ?>
+								<tr>
+									<td colspan="3">
+										<p class="alert alert-info">no selected product yet</p>
+									</td>
+								</tr>
 							</tbody>
 							<tfoot>
 								<tr>
 									<td colspan="2" class="text-right">
 										Total
 									</td>
-									<td class="value-total">Rp 100.000</td>
+									<td class="value-total">Rp <a class="number">0</a></td>
 								</tr>
 								<tr>
 									<td colspan="2" class="text-right">
 										Customer Paid
 									</td>
-									<td class="value-paid">Rp 100.000</td>
+									<td class="value-paid">
+										<input type="number" class="form-control input-paid" style="width:120px;" />
+									</td>
 								</tr>
 								<tr>
 									<td colspan="2" class="text-right">
 										Change
 									</td>
-									<td class="value-change">0</td>
+									<td class="value-change">Rp <a class="number">0</a></td>
 								</tr>
 							</tfoot>
 						</table>
@@ -161,8 +168,8 @@
 						<div class="block-thumb">
 							<img src="<%= window.file_path + '/' + product_thumb %>" alt="<%= product_name %>">
 						</div>
-						<div class="block-action">
-							<input type="checkbox" name="select_files" value="<%= product_name %>">
+						<div class="block-body">
+							<h5><%= product_name %></h5>
 						</div>
 					</div>
 					<!-- product block -->
@@ -178,7 +185,7 @@
 						<p class="no-margin"><small>@ Rp <%= product_price %></small></p>
 					</td>
 					<td>
-						<input type="number" class="form-control qty" value="<%= qty %>" style="width:64px" />
+						<input type="number" class="form-control input-qty" value="<%= qty %>" data-id="<%= id %>" style="width:64px" />
 					</td>
 					<td>Rp <%= product_price * qty %></td>
 				</tr>
