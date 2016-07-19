@@ -2,3 +2,6 @@
 - [done] unselect selection
 - delete file
 - [done] insert to html input callback
+- show thumbnail after callback
+- set window height & weight
+- set window css
