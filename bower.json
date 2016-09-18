@@ -22,7 +22,8 @@
     "underscore": "^1.8.3",
     "blueimp-file-upload": "jquery-file-upload#^9.12.3",
     "isotope": "^3.0.1",
-    "imagesloaded": "^4.1.1"
+    "imagesloaded": "^4.1.1",
+    "tinymce": "^4.4.3"
   },
   "devDependencies": {}
 }
