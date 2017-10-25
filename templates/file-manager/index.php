@@ -151,26 +151,26 @@
 
 
 		<script type="text/template" id="files_selected">
-				<div class="file-block block">
-					<div class="block-thumb">
-						<img src="<%= window.file_path + '/' + file_thumb %>" alt="<%= file_name %>">
-					</div>
-					<div class="block-body">
-						<h5><%= file_name %></h5>
-						<p class="file-meta">
-							<span><%= created_date %></span> 
-							<span><%= (file_size/1024).toFixed(2) %>KB</span>
-						</p>
-					</div>
-					<div class="block-action">
-						<a class="text-danger unselect" data-id="<%= id %>" data-key="<%= key %>">
-							<i class="fa fa-remove"></i>
-						</a>
-					</div>
+			<div class="file-block block">
+				<div class="block-thumb">
+					<img src="<%= window.file_path + '/' + file_thumb %>" alt="<%= file_name %>">
 				</div>
-				<!-- file block -->
-			</script>
-			<!-- script -->
+				<div class="block-body">
+					<h5><%= file_name %></h5>
+					<p class="file-meta">
+						<span><%= created_date %></span> 
+						<span><%= (file_size/1024).toFixed(2) %>KB</span>
+					</p>
+				</div>
+				<div class="block-action">
+					<a class="text-danger unselect" data-id="<%= id %>" data-key="<%= key %>">
+						<i class="fa fa-remove"></i>
+					</a>
+				</div>
+			</div>
+			<!-- file block -->
+		</script>
+		<!-- script -->
 
 		</div>
 		<!-- app -->
